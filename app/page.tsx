@@ -1,13 +1,27 @@
+import EventCard from '@/components/EventCard'
+import ExploreBtn from '@/components/ExploreBtn'
+import { images } from '@/constants/images'
+import { events } from '@/lib/constants'
 import React from 'react'
 
 function Homepage() {
   return (
-    <div>
-      <h1 className='flex-center animated-gradient-text'>Welcome to my Home page</h1>
-      <h1 className='flex-center animated-gradient-text'>Welcome to my</h1>
-    </div>
+    <section  >
+      <h1 className='animated-gradient-text text-center'>The Hub for Every Dev <br/> Event You can not miss</h1>
+      <p className='mt-5 text-center font-schibsted'>Hackathons, Meetups, and Conferneces, All in One Place</p>
 
-
+      <ExploreBtn />
+      <div className='mt-20 space-y-7'>
+        <h3>Feature Events</h3>
+        <ul className='events'>
+          {events.map((event)=>(
+            <li key={event.title}>
+              <EventCard {...event} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   )
 }
 

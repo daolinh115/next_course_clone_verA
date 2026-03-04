@@ -10,7 +10,7 @@ const martinMono = Martian_Mono({
 });
 
 const schibsted = Schibsted_Grotesk({
-  variable: "--font-schibsted-grotest",
+  variable: "--font-schibsted-grotesk",
   subsets: ["latin"],
 });
 
