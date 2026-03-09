@@ -7,7 +7,7 @@ export interface Event {
   image: string;
   slug: string;
   location: string;
-  data: string;
+  date: string;
   time: string;
 }
 
@@ -17,7 +17,7 @@ export const events: Event[] = [
     image: '/images/event1.png',
     slug: 'jsconf-eu-2026',
     location: 'Berlin, Germany',
-    data: '2026-06-15',
+    date: '2026-06-15',
     time: '09:00',
   },
   {
@@ -25,7 +25,7 @@ export const events: Event[] = [
     image: '/images/event2.png',
     slug: 'react-summit-2026',
     location: 'Amsterdam, Netherlands',
-    data: '2026-04-20',
+    date: '2026-04-20',
     time: '10:00',
   },
   {
@@ -33,7 +33,7 @@ export const events: Event[] = [
     image: '/images/event3.png',
     slug: 'hackzurich-2026',
     location: 'Zurich, Switzerland',
-    data: '2026-09-18',
+    date: '2026-09-18',
     time: '18:00',
   },
   {
@@ -41,7 +41,7 @@ export const events: Event[] = [
     image: '/images/event4.png',
     slug: 'pycon-us-2026',
     location: 'Portland, OR, USA',
-    data: '2026-05-01',
+    date: '2026-05-01',
     time: '08:30',
   },
   {
@@ -49,7 +49,7 @@ export const events: Event[] = [
     image: '/images/event5.png',
     slug: 'devfest-nyc-2026',
     location: 'New York City, USA',
-    data: '2026-10-10',
+    date: '2026-10-10',
     time: '11:00',
   },
   {
@@ -57,7 +57,7 @@ export const events: Event[] = [
     image: '/images/event6.png',
     slug: 'fossasia-summit-2026',
     location: 'Singapore',
-    data: '2026-03-20',
+    date: '2026-03-20',
     time: '09:30',
   },
 ];
