@@ -7,11 +7,11 @@ interface props {
   image: string|StaticImageData;
   slug: string;
   location: string;
-  data: string;
+  date: string;
   time: string
 }
 
-const EventCard = ({title, image, slug, location, data, time}: props) => {
+const EventCard = ({title, image, slug, location, date, time}: props) => {
   return (
     <Link href={`/events/${slug}`} id="event-card">
         <Image src={image} alt="title" width={410} height={300} className="poster" />
@@ -19,7 +19,18 @@ const EventCard = ({title, image, slug, location, data, time}: props) => {
           <Image src={icons.pin} alt="location" width={14} height={14} />
           <p>{location}</p>
         </div>
+        <div className="datetime">
+          <div className="flex flex-row gap-2">
+            <Image src={icons.calendar} alt="calendar" width={14} height={14} />
+            <p>{date}</p>
+         </div>
+          <div className="flex flex-row gap-2">
+            <Image src={icons.calendar} alt="time" width={14} height={14} />
+            <p>{time}</p>
+         </div>
+        </div>
         <p className="title">{title}</p> 
+        
     </Link>
   )
 }
