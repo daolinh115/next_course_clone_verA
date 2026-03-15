@@ -15,11 +15,12 @@ const EventCard = ({title, image, slug, location, date, time}: props) => {
   return (
     <Link href={`/events/${slug}`} id="event-card">
         <Image src={image} alt="title" width={410} height={300} className="poster" />
-        <div className="flex flex-row gap-2 ">
+        <div className="flex flex-row gap-2 mt-3 ">
           <Image src={icons.pin} alt="location" width={14} height={14} />
           <p>{location}</p>
         </div>
-        <div className="datetime">
+        <p className="title mt-2">{title}</p> 
+        <div className="datetime flex flex-row gap-4 mt-2">
           <div className="flex flex-row gap-2">
             <Image src={icons.calendar} alt="calendar" width={14} height={14} />
             <p>{date}</p>
@@ -29,7 +30,6 @@ const EventCard = ({title, image, slug, location, date, time}: props) => {
             <p>{time}</p>
          </div>
         </div>
-        <p className="title">{title}</p> 
         
     </Link>
   )
