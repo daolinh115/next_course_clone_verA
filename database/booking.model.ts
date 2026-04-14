@@ -16,12 +16,11 @@ const BookingSchema = new Schema<IBooking>({
 }, { timestamps: true });
 
 // Pre-save hook: Kiểm tra EventId có tồn tại không
-BookingSchema.pre('save', async function(next) {
+BookingSchema.pre('save', async function() {
   const eventExists = await Event.findById(this.eventId);
   if (!eventExists) {
     throw new Error('Event does not exist. Cannot create booking.');
   }
-  next();
 });
 
 const Booking = models.Booking || model<IBooking>('Booking', BookingSchema);

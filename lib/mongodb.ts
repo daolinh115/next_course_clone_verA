@@ -5,11 +5,6 @@ import mongoose from 'mongoose';
  */
 const MONGODB_URI = process.env.MONGODB_URI;
 
-if (!MONGODB_URI) {
-  throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local'
-  );
-}
 
 /** 2. Định nghĩa kiểu dữ liệu cho biến Cache để tránh dùng "any"
  * Define types for the cached connection to avoid using "any"
@@ -34,6 +29,11 @@ if (!cached) {
 }
 
 async function dbConnect() {
+  if (!MONGODB_URI) {
+  throw new Error(
+    'Please define the MONGODB_URI environment variable inside .env.local'
+  );
+  }
   /** 4. Nếu đã có kết nối, trả về luôn để tiết kiệm tài nguyên
    * If a connection exists, return it immediately
    */
