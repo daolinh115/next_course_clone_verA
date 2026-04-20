@@ -1,0 +1,59 @@
+###
+### Gửi yêu cầu tạo event mới
+### Gửi yêu cầu tạo event mới (Dạng Form Data)
+POST http://localhost:3000/api/events
+Content-Type: multipart/form-data; boundary=boundary_12345
+
+--boundary_12345
+Content-Disposition: form-data; name="title"
+
+Cloud Next 2026
+--boundary_12345
+Content-Disposition: form-data; name="description"
+
+Google's premier cloud computing event...
+--boundary_12345
+Content-Disposition: form-data; name="overview"
+
+Cloud Next 2025 highlights...
+--boundary_12345
+Content-Disposition: form-data; name="image"
+
+https://images.unsplash.com/...
+--boundary_12345
+Content-Disposition: form-data; name="venue"
+
+Moscone Center
+--boundary_12345
+Content-Disposition: form-data; name="location"
+
+San Francisco, CA
+--boundary_12345
+Content-Disposition: form-data; name="date"
+
+2025-04-10
+--boundary_12345
+Content-Disposition: form-data; name="time"
+
+08:30
+--boundary_12345
+Content-Disposition: form-data; name="mode"
+
+hybrid
+--boundary_12345
+Content-Disposition: form-data; name="audience"
+
+Cloud engineers, DevOps, enterprise leaders, AI researchers
+--boundary_12345
+Content-Disposition: form-data; name="agenda"
+
+08:30 AM - 09:30 AM | Keynote: AI-Driven Cloud Infrastructure
+--boundary_12345
+Content-Disposition: form-data; name="organizer"
+
+Google Cloud
+--boundary_12345
+Content-Disposition: form-data; name="tags"
+
+Cloud, DevOps, Kubernetes, AI
+--boundary_12345--
