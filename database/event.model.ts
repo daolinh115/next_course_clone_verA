@@ -7,7 +7,10 @@ export interface IEvent extends Document {
   slug: string;
   description: string;
   overview: string;
-  image: string;
+  image: {
+    secure_url: string,
+    public_id:string
+  };
   venue: string;
   location: string;
   date: string;
@@ -25,9 +28,11 @@ export interface IEvent extends Document {
 const EventSchema = new Schema<IEvent>({
   title: { type: String, required: true },
   slug: { type: String, unique: true },
-  description: { type: String, required: true },
-  overview: { type: String, required: true },
-  image: { type: String, required: true },
+  description: { type: String, required: true},
+  image: {
+    secure_url:{ type: String, required: true },
+    public_id:{type:String, requerie: true}
+  },
   venue: { type: String, required: true },
   location: { type: String, required: true },
   date: { type: String, required: true },
