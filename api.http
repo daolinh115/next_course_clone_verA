@@ -17,9 +17,10 @@ Content-Disposition: form-data; name="overview"
 
 Cloud Next 2025 highlights...
 --boundary_12345
-Content-Disposition: form-data; name="image"
+Content-Disposition: form-data; name="image"; filename="event1.png"
+Content-Type: image/png
 
-https://images.unsplash.com/...
+< C:\Users\HP\OneDrive\Desktop\event1.png
 --boundary_12345
 Content-Disposition: form-data; name="venue"
 
