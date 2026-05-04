@@ -7,7 +7,10 @@ import posthog from "posthog-js"
 
 interface props {
   title: string;
-  image: string|StaticImageData;
+  image: {
+    secure_url:string|StaticImageData;
+    public_id:string
+  }
   slug: string;
   location: string;
   date: string;
@@ -26,7 +29,7 @@ const EventCard = ({title, image, slug, location, date, time}: props) => {
 
   return (
     <Link href={`/events/${slug}`} id="event-card" onClick={handleClick}>
-        <Image src={image} alt="title" width={410} height={300} className="poster" />
+        <Image src={image.secure_url} alt="title" width={410} height={300} className="poster" />
         <div className="flex flex-row gap-2 mt-3 ">
           <Image src={icons.pin} alt="location" width={14} height={14} />
           <p>{location}</p>
@@ -35,7 +38,7 @@ const EventCard = ({title, image, slug, location, date, time}: props) => {
         <div className="datetime flex flex-row flex-wrap items-center gap-4 text-light-200">
           <div className="flex flex-row gap-2">
             <Image src={icons.calendar} alt="date" width={14} height={14} />
-            <p>{date}</p>
+            <p>{date.split('T')[0]}</p>
           </div>
           <div className="flex flex-row gap-2">
             <Image src={icons.clock} alt="time" width={14} height={14} />

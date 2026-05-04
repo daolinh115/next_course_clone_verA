@@ -5,6 +5,8 @@ import { v2 as cloudinary } from "cloudinary";
 import { IEvent } from "@/database/event.model";
 
 
+
+
 export async function POST(req:NextRequest) {
     let uploadedPublicId: string | null = null; // Track this for cleanup
 
@@ -42,7 +44,7 @@ export async function POST(req:NextRequest) {
                 public_id: uploadResult.public_id
             }
         };
-
+        console.log("Dữ liệu chuẩn bị ghi vào DB:", finalEvent);
         const createdEvent = await Event.create(finalEvent);
         return NextResponse.json({ message: 'Event created successfully', event: createdEvent }, { status: 201 });
 
@@ -58,5 +60,17 @@ export async function POST(req:NextRequest) {
             message: 'Event Creation failed', 
             error: e instanceof Error ? e.message : 'unknown' 
         }, { status: 500 });
+    }
+}
+
+export async function GET(){
+    try{
+        await dbConnect()
+
+        const events = await Event.find().sort({createAt: -1})
+
+        return NextResponse.json({message: 'Event fetched successfully', events}, {status: 200})
+    }catch(e){
+        return NextResponse.json({message: "Event fetching failed", error: e}, {status: 500})
     }
 }
